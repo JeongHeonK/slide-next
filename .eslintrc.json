@@ -24,7 +24,10 @@
     "import/extensions": ["off", "ignorePackages"],
     "no-console": "error",
     "import/prefer-default-export": "off",
-    "no-restricted-exports": "off"
+    "no-restricted-exports": "off",
+    "import/no-extraneous-dependencies": "off",
+    "react/jsx-props-no-spreading": "off",
+    "@typescript-eslint/no-use-before-define": "off"
   },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
