@@ -1,6 +1,7 @@
 'use client'
 
 import { LINKS } from '@/app/constants'
+import { useBannerStateStore } from '@/app/store'
 import { usePathname, useRouter } from 'next/navigation'
 import { PropsWithChildren } from 'react'
 import { useSwipeable } from 'react-swipeable'
@@ -27,9 +28,13 @@ const useSlideLayout = () => {
 
   const handlers = useSwipeable({
     onSwipedLeft: () => {
+      const isBannerMoving = useBannerStateStore.getState().isBanner
+      if (isBannerMoving) return
       router.push(nextPath)
     },
     onSwipedRight: () => {
+      const isBannerMoving = useBannerStateStore.getState().isBanner
+      if (isBannerMoving) return
       router.push(prevPath)
     },
     swipeDuration: 300,

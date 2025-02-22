@@ -4,26 +4,21 @@ import { useCallback, useMemo, useState } from 'react'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import { useBannerStateStore } from '@/app/store'
 import CustomPaging from './CustomSlide/CustomPaging'
 import { BANNER, INITIAL_SETTING } from '../../constants'
 import BannerCard from './BannerCard'
-import { useBannerStateStore } from '@/app/store/store'
 
 export default function Banner() {
   const { settings, currentSlideIndex } = useBanner()
-  const setIsBannerActive = useBannerStateStore(
-    (state) => state.setIsBannerActive,
-  )
-  const setIsBannerInactive = useBannerStateStore(
-    (state) => state.setIsBannerInactive,
-  )
+  const bannerStateActions = useBannerStateStore((state) => state.actions)
 
   return (
     <div
       className="mx-auto mb-5"
-      onTouchStart={() => setIsBannerActive()}
-      onTouchMove={() => setIsBannerActive()}
-      onTouchEnd={() => setIsBannerInactive()}
+      onTouchStart={() => bannerStateActions.setIsBannerActive()}
+      onTouchMove={() => bannerStateActions.setIsBannerActive()}
+      onTouchEnd={() => bannerStateActions.setIsBannerInactive()}
     >
       <Slider {...settings} className="carousel-container">
         {BANNER.map(({ title, description, isProgressing, image }, index) => (
