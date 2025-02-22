@@ -1,7 +1,7 @@
 import { PropsWithChildren } from 'react'
 import Header from '../components/Header'
 
-export default function layout({ children }: PropsWithChildren) {
+export default function Layout({ children }: PropsWithChildren) {
   return (
     <>
       <Header />
