@@ -1,4 +1,4 @@
-export const LINK = [
+export const LINKS = [
   { path: '/chart', name: '차트' },
   { path: '/Whook', name: 'Whook' },
   { path: '/event', name: '이벤트' },
