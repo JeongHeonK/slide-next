@@ -21,17 +21,20 @@ export default function Banner() {
       onTouchEnd={() => bannerStateActions.setIsBannerInactive()}
     >
       <Slider {...settings} className="carousel-container">
-        {BANNER.map(({ title, description, isProgressing, image }, index) => (
-          <BannerCard
-            key={title}
-            currentSlideIndex={currentSlideIndex}
-            index={index}
-            image={image}
-            title={title}
-            description={description}
-            isProgressing={isProgressing}
-          />
-        ))}
+        {BANNER.map(
+          ({ title, description, startDate, endDate, image }, index) => (
+            <BannerCard
+              key={title}
+              currentSlideIndex={currentSlideIndex}
+              index={index}
+              image={image}
+              title={title}
+              description={description}
+              startDate={startDate}
+              endDate={endDate}
+            />
+          ),
+        )}
       </Slider>
     </div>
   )
