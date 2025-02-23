@@ -29,7 +29,6 @@ export default function BannerCard({
 }: BannerCardProps) {
   const isCenter = index === currentSlideIndex
   const isProgressing = calculateIsProgressing(startDate, endDate)
-  console.log(isProgressing)
   return (
     <div
       id="banner"
