@@ -1,7 +1,5 @@
 'use client'
 
-import { useRouter } from 'next/navigation'
-
 import { useEffect } from 'react'
 import CustomButton from '../components/CustomButton'
 
@@ -12,8 +10,6 @@ export default function Error({
   error: Error & { digest?: string }
   reset: () => void
 }) {
-  const router = useRouter()
-
   useEffect(() => {
     // eslint-disable-next-line no-console
     console.error(error)

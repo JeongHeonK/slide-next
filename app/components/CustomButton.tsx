@@ -6,17 +6,17 @@ import { ButtonHTMLAttributes } from 'react'
 interface BannerButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string
   variant: 'filled' | 'outlined'
+  path?: string
   size?: 'medium' | 'small'
   isDisabled?: boolean
-  path?: string
   customStyle?: string
   onClick?: () => void
 }
 export default function CustomButton({
   text,
-  path,
   variant,
   customStyle,
+  path = '/',
   size = 'medium',
   isDisabled = false,
   onClick,
