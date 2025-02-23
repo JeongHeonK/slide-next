@@ -1,3 +1,9 @@
+import ComingSoon from '@/app/components/ComingSoon'
+
 export default function EventPage() {
-  return <div>Event</div>
+  return (
+    <>
+      <ComingSoon />
+    </>
+  )
 }

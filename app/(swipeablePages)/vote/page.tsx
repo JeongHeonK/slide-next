@@ -1,6 +1,6 @@
 import ComingSoon from '@/app/components/ComingSoon'
 
-export default function NewsPage() {
+export default function VotePage() {
   return (
     <>
       <ComingSoon />
