@@ -19,7 +19,7 @@ export default function ComingSoon() {
         text="홈으로"
         variant="filled"
         path="/"
-        customStyle="absolute z-30 left-52 top-72"
+        customStyle="absolute z-30 left-0 right-0 w-20 mx-auto top-72"
       />
     </div>
   )
