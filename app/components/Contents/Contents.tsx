@@ -3,6 +3,7 @@
 import InfiniteScroll from 'react-infinite-scroll-component'
 import { useRef, useState } from 'react'
 import Content from './Content/Content'
+import Spinner from '../Spinner'
 
 interface ContentsProps {
   initialData: { rank: number; title: string; artist: string }[]
@@ -17,7 +18,7 @@ export default function Contents({ initialData, hasNext }: ContentsProps) {
 
   return (
     <div
-      className="bg-zinc-200 p-3 overflow-y-scroll h-[400px]"
+      className="bg-zinc-200 p-3 overflow-y-scroll h-[400px] "
       id="scrollableDiv"
     >
       <InfiniteScroll
@@ -25,7 +26,7 @@ export default function Contents({ initialData, hasNext }: ContentsProps) {
         dataLength={chartData.length}
         next={fetchMoreData}
         hasMore={hasMore}
-        loader={<h4>loading...</h4>}
+        loader={<Spinner />}
         scrollableTarget="scrollableDiv"
       >
         {chartData?.map(({ title, rank, artist }, index) => (
