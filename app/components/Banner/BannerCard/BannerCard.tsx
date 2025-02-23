@@ -1,10 +1,10 @@
+import { MouseEvent } from 'react'
 import { calculateIsProgressing } from '@/app/util'
 import CustomButton from '../../CustomButton'
 import BannerCardBadge from './BannerCardBadge'
 import BannerCardDescription from './BannerCardDescription'
 import BannerCardImage from './BannerCardImage'
 import BannerCardTitle from './BannerCardTitle'
-import { MouseEvent } from 'react'
 
 interface BannerCardProps {
   index: number
