@@ -1,4 +1,4 @@
-import BannerButton from './BannerButton'
+import CustomButton from '../../CustomButton'
 import BannerCardBadge from './BannerCardBadge'
 import BannerCardDescription from './BannerCardDescription'
 import BannerCardImage from './BannerCardImage'
@@ -35,10 +35,12 @@ export default function BannerCard({
       <div className="p-2">
         <div className="mb-2.5 flex items-center gap-2">
           <BannerCardTitle>{title}</BannerCardTitle>
-          <BannerButton
+          <CustomButton
             variant="outlined"
             text="투표하기"
-            isProgressing={isProgressing}
+            size="small"
+            isDisabled={!isProgressing}
+            path="/vote"
           />
         </div>
         <BannerCardDescription>{description}</BannerCardDescription>

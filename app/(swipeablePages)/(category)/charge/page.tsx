@@ -1,3 +1,5 @@
+import ComingSoon from '@/app/components/ComingSoon'
+
 export default function ChargePage() {
-  return <div>Charge</div>
+  return <ComingSoon />
 }

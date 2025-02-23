@@ -1,28 +1,39 @@
+'use client'
+
 import { useRouter } from 'next/navigation'
 import { ButtonHTMLAttributes } from 'react'
 
 interface BannerButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string
   variant: 'filled' | 'outlined'
-  isProgressing: boolean
+  path?: string
+  size?: 'medium' | 'small'
+  isDisabled?: boolean
+  customStyle?: string
+  onClick?: () => void
 }
-export default function BannerButton({
+export default function CustomButton({
   text,
   variant,
-  isProgressing,
+  customStyle,
+  path = '/',
+  size = 'medium',
+  isDisabled = false,
+  onClick,
   ...props
 }: BannerButtonProps) {
   const router = useRouter()
   const handleClick = () => {
-    router.push('/vote')
+    if (!path) return
+    router.push(path)
   }
 
   return (
     <button
       type="button"
-      className={`${isProgressing ? variantStyle[variant] : variantStyle.disabled[variant]} flex-shrink-0 rounded-2xl px-2 text-sm transition-all`}
-      disabled={!isProgressing}
-      onClick={handleClick}
+      className={`${!isDisabled ? variantStyle[variant] : variantStyle.disabled[variant]} ${variantStyle[size]} flex-shrink-0 rounded-2xl transition-all ${customStyle}`}
+      disabled={isDisabled}
+      onClick={onClick || handleClick}
       {...props}
     >
       {text}
@@ -31,6 +42,8 @@ export default function BannerButton({
 }
 
 const variantStyle = {
+  medium: 'px-3 py-2 text-md',
+  small: 'px-2 text-sm',
   filled: 'bg-rose-500 text-white hover:bg-rose-300 active:bg-rose-700',
   outlined:
     'border border-rose-500 text-rose-500 hover:border-rose-300 hover:text-rose-300 active:border-rose-700 active:text-rose-700',
