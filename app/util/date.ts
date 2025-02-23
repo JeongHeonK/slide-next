@@ -1,10 +1,17 @@
 import dayjs from 'dayjs'
+import utc from 'dayjs/plugin/utc'
+import timezone from 'dayjs/plugin/timezone'
+import customParseFormat from 'dayjs/plugin/customParseFormat'
 
-export const calculateIsProgressing = (startDate: string, endDate: string) => {
-  const today = dayjs()
+dayjs.extend(utc)
+dayjs.extend(timezone)
+dayjs.extend(customParseFormat)
 
-  const startData = dayjs(startDate, 'YYYY.MM.DD HH:mm')
-  const endData = dayjs(endDate, 'YYYY.MM.DD HH:mm')
+export const calculateIsProgressing = (start: string, end: string) => {
+  const today = dayjs().tz('Asia/Seoul')
 
-  return startData.isBefore(today) && endData.isAfter(today)
+  const startDate = dayjs(start, 'YYYY.MM.DD HH:mm').tz('Asia/Seoul')
+  const endDate = dayjs(end, 'YYYY.MM.DD HH:mm').tz('Asia/Seoul')
+
+  return startDate.isBefore(today) && endDate.isAfter(today)
 }
