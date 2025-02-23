@@ -14,14 +14,14 @@ export default function Content({ rank, title, artist, index }: ContentProps) {
 
   return (
     <div
-      className={`flex justify-between items-center gap-3 drop-shadow-md bg-white rounded-md px-3 py-1 max-w-5xl mx-auto transition-all ${animatedClassName}`}
+      className={`flex justify-between text-sm items-center gap-3 drop-shadow-md bg-white rounded-md px-3 py-1 max-w-full mx-auto transition-all ${animatedClassName}`}
     >
       <span
         className={`${isTopThree ? 'bg-red-500' : 'bg-rose-300'} text-white px-4 py-2 rounded-md`}
       >
         {rank}
       </span>
-      <span className="w-52 text-left flex-1 overflow-hidden text-ellipsis whitespace-nowrap">
+      <span className="w-52 text-left flex-grow-1 overflow-hidden text-ellipsis whitespace-nowrap">
         {title}
       </span>
       <span className="w-32 text-ellipsis whitespace-nowrap overflow-hidden">
