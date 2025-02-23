@@ -1,10 +1,13 @@
+import { getCharts } from '@/app/api/chart'
 import Banner from '@/app/components/Banner'
+import Contents from '@/app/components/Contents/Contents'
 
-export default function ChartPage() {
+export default async function ChartPage() {
+  const { result, hasNext } = await getCharts()
   return (
     <div>
       <Banner />
-      <div>chart part</div>
+      <Contents initialData={result} hasNext={hasNext} />
     </div>
   )
 }

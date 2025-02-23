@@ -13,6 +13,7 @@ export default function BannerCardImage({ src, alt }: BannerCardImageProps) {
         src={src}
         alt={alt}
         className="block object-cover object-center w-auto h-auto"
+        priority
       />
     </div>
   )
