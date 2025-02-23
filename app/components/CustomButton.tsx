@@ -1,7 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import { ButtonHTMLAttributes } from 'react'
+import { ButtonHTMLAttributes, MouseEvent } from 'react'
 
 interface BannerButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string
@@ -23,7 +23,8 @@ export default function CustomButton({
   ...props
 }: BannerButtonProps) {
   const router = useRouter()
-  const handleClick = () => {
+  const handleClick = (e: MouseEvent) => {
+    e.stopPropagation()
     if (!path) return
     router.push(path)
   }
