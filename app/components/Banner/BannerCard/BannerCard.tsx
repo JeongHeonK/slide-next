@@ -1,3 +1,4 @@
+import { calculateIsProgressing } from '@/app/util'
 import CustomButton from '../../CustomButton'
 import BannerCardBadge from './BannerCardBadge'
 import BannerCardDescription from './BannerCardDescription'
@@ -7,9 +8,10 @@ import BannerCardTitle from './BannerCardTitle'
 interface BannerCardProps {
   index: number
   currentSlideIndex: number
-  isProgressing: boolean
   title: string
   description: string
+  startDate: string
+  endDate: string
   image: {
     name: string
     src: string
@@ -21,11 +23,12 @@ export default function BannerCard({
   currentSlideIndex,
   title,
   description,
-  isProgressing,
+  startDate,
+  endDate,
   image,
 }: BannerCardProps) {
   const isCenter = index === currentSlideIndex
-
+  const isProgressing = calculateIsProgressing(startDate, endDate)
   return (
     <div
       id="banner"
