@@ -15,7 +15,7 @@ export default function Banner() {
 
   return (
     <div
-      className="mx-auto mb-5"
+      className="mx-auto mb-7"
       onTouchStart={() => bannerStateActions.setIsBannerActive()}
       onTouchMove={() => bannerStateActions.setIsBannerActive()}
       onTouchEnd={() => bannerStateActions.setIsBannerInactive()}
