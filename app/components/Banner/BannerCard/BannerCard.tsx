@@ -25,10 +25,11 @@ export default function BannerCard({
   image,
 }: BannerCardProps) {
   const isCenter = index === currentSlideIndex
+
   return (
     <div
       id="banner"
-      className={`drop-shadow-banner relative mx-1.5 my-3 rounded-xl bg-white transition-opacity ${isCenter ? 'opacity-100' : 'opacity-40'}`}
+      className={`drop-shadow-banner relative mx-1.5 my-3 rounded-xl z-10 bg-white transition-opacity ${isCenter ? 'opacity-100' : 'opacity-40'}`}
     >
       {isProgressing && <BannerCardBadge />}
       <BannerCardImage src={image.src} alt={image.name} />
