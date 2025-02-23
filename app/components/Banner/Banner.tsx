@@ -22,8 +22,12 @@ export default function Banner() {
     >
       <Slider {...settings} className="carousel-container">
         {BANNER.map(
-          ({ title, description, startDate, endDate, image }, index) => (
+          (
+            { title, description, startDate, endDate, image, externalURL },
+            index,
+          ) => (
             <BannerCard
+              externalURL={externalURL}
               key={title}
               currentSlideIndex={currentSlideIndex}
               index={index}

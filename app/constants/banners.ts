@@ -5,6 +5,7 @@ export const BANNER = [
     startDate: '2025.02.03 10:00',
     endDate: '2025.02.28 23:00',
     image: { name: 'image1', src: '/img/image1.jpg' },
+    externalURL: 'https://www.hanteoglobal.com/',
   },
   {
     title: '[M COUNTDOWN] 2월 2주차 엠카 사전과제 보러가기',
@@ -12,6 +13,7 @@ export const BANNER = [
     startDate: '2025.02.10 10:00',
     endDate: '2025.02.14 23:00',
     image: { name: 'image2', src: '/img/image2.jpg' },
+    externalURL: 'https://www.hanteoglobal.com/',
   },
   {
     title: '[M COUNTDOWN] 2월 3주차 엠카 사전과제 보러가기',
@@ -19,6 +21,7 @@ export const BANNER = [
     startDate: '2025.02.17 10:00',
     endDate: '2025.02.21 23:00',
     image: { name: 'image3', src: '/img/image3.jpg' },
+    externalURL: 'https://www.hanteoglobal.com/',
   },
   {
     title: '[M COUNTDOWN] 2월 4주차 엠카 사전과제 보러가기',
@@ -26,6 +29,7 @@ export const BANNER = [
     startDate: '2025.02.23 10:00',
     endDate: '2025.02.28 23:00',
     image: { name: 'image4', src: '/img/image4.jpg' },
+    externalURL: 'https://www.hanteoglobal.com/',
   },
   {
     title: '[M COUNTDOWN] 3월 1주차 엠카 사전과제 보러가기',
@@ -33,5 +37,6 @@ export const BANNER = [
     startDate: '2025.03.03 10:00',
     endDate: '2025.03.07 23:00',
     image: { name: 'image5', src: '/img/image5.jpg' },
+    externalURL: 'https://www.hanteoglobal.com/',
   },
 ]

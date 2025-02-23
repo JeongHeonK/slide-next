@@ -4,6 +4,7 @@ import BannerCardBadge from './BannerCardBadge'
 import BannerCardDescription from './BannerCardDescription'
 import BannerCardImage from './BannerCardImage'
 import BannerCardTitle from './BannerCardTitle'
+import { MouseEvent } from 'react'
 
 interface BannerCardProps {
   index: number
@@ -12,6 +13,7 @@ interface BannerCardProps {
   description: string
   startDate: string
   endDate: string
+  externalURL: string
   image: {
     name: string
     src: string
@@ -26,14 +28,21 @@ export default function BannerCard({
   startDate,
   endDate,
   image,
+  externalURL,
 }: BannerCardProps) {
   const isCenter = index === currentSlideIndex
   const isProgressing = calculateIsProgressing(startDate, endDate)
 
+  const goToExternalSite = (e: MouseEvent) => {
+    e.stopPropagation()
+    window.open(externalURL, '_blank', 'noopener,noreferrer')
+  }
+
   return (
     <div
+      onClick={goToExternalSite}
       id="banner"
-      className={`drop-shadow-banner relative mx-1.5 my-3 rounded-xl z-10 bg-white transition-opacity ${isCenter ? 'opacity-100' : 'opacity-40'}`}
+      className={`drop-shadow-banner cursor-pointer relative mx-1.5 my-3 rounded-xl z-10 bg-white transition-opacity ${isCenter ? 'opacity-100' : 'opacity-40'}`}
     >
       {isProgressing && <BannerCardBadge />}
       <BannerCardImage src={image.src} alt={image.name} />
